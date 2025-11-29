@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet Pal - Learn the Solar System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+      body {
+        font-family: 'Fredoka', sans-serif;
+        background-color: #0f172a; /* slate-900 */
+        color: #f8fafc;
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e293b; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #475569; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b; 
+      }
+
+      /* Print Styles */
+      @media print {
+        @page { margin: 0.5cm; size: portrait; }
+        body { 
+          background-color: white !important; 
+          color: black !important; 
+          background-image: none !important;
+        }
+        #root { width: 100%; }
+        .no-print { display: none !important; }
+        .print-only { display: block !important; }
+        .print-break-inside-avoid { break-inside: avoid; }
+        .print-break-after { break-after: page; }
+        
+        /* Force background colors (important for planets) */
+        * { 
+          -webkit-print-color-adjust: exact !important; 
+          print-color-adjust: exact !important; 
+        }
+        
+        /* Typography adjustments for print */
+        h1, h2, h3, p { color: black !important; }
+        
+        /* Hide scrollbars in print */
+        ::-webkit-scrollbar { display: none; }
+      }
+      
+      .print-only { display: none; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
