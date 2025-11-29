@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Planet } from '../types';
-import { generateMoreFunFacts } from '../services/geminiService';
+import { generateMoreFunFacts } from '../services/Service';
 
 interface FlashcardProps {
   planet: Planet;

@@ -21,7 +21,7 @@ const App: React.FC = () => {
     <div className={`min-h-screen ${mode === AppMode.PRINTABLES ? 'bg-slate-100' : "bg-[url('https://picsum.photos/seed/space/1920/1080')] bg-cover bg-center bg-fixed bg-no-repeat"} relative`}>
       {/* Dark Overlay for digital modes */}
       {mode !== AppMode.PRINTABLES && (
-         <div className="absolute inset-0 bg-slate-900/90 backdrop-blur-sm z-0"></div>
+         <div className="absolute inset-0 bg-slate-900/90 backdrop-blur-sm z-0 no-print"></div>
       )}
 
       <div className="relative z-10 container mx-auto px-4 py-8 flex flex-col min-h-screen">
@@ -72,7 +72,7 @@ const App: React.FC = () => {
           </nav>
         </header>
 
-        {/* Content Area */}
+        {/* Content Area - Simplified for printing */}
         <main className="flex-grow flex flex-col items-center justify-center w-full">
           
           {mode === AppMode.FLASHCARDS && (

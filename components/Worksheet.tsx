@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { generateWorksheet } from '../services/geminiService';
+import { generateWorksheet } from '../services/Service';
 import { WorksheetData, QuestionType } from '../types';
 
 const Worksheet: React.FC = () => {
@@ -56,10 +56,7 @@ const Worksheet: React.FC = () => {
   if (!worksheet) {
     return (
       <div className="flex flex-col items-center justify-center h-full p-8 text-center">
-        <h2 className="text-3xl font-bold text-white mb-6">Create a Worksheet</h2>
-        <p className="text-slate-300 mb-8 max-w-md">
-          Use AI to generate a unique practice worksheet to test your knowledge about the planets.
-        </p>
+        <h2 className="text-3xl font-bold text-white mb-6">Choose a Worksheet</h2>
         <div className="flex gap-4">
           <button
             onClick={() => handleGenerate('easy')}
