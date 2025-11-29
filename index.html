@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet Pal - Learn the Solar System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+      body {
+        font-family: 'Fredoka', sans-serif;
+        background-color: #0f172a; /* slate-900 */
+        color: #f8fafc;
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e293b; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #475569; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b; 
+      }
+      /* Print Styles - CORRECTED */
+      @media print {
+        @page { 
+          margin: 0.5cm; 
+          size: A4 portrait; 
+        }
+        
+        body { 
+          background-color: white !important; 
+          color: black !important; 
+          background-image: none !important;
+          width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        
+        #root { 
+          width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        
+        /* Hide non-printable elements */
+        .no-print { 
+          display: none !important; 
+        }
+        
+        /* Reset container constraints */
+        .container {
+          max-width: none !important;
+          width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        
+        /* A4 page container */
+        .a4-page {
+          width: 210mm !important;
+          min-height: 297mm !important;
+          max-height: 297mm !important;
+          margin: 0 auto !important;
+          padding: 1cm !important;
+          box-sizing: border-box;
+          box-shadow: none !important;
+        }
+        
+        /* Flashcard specific styles */
+        .flashcard-grid {
+          display: grid !important;
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 0.5cm !important;
+          height: 100% !important;
+        }
+        
+        .flashcard-item {
+          height: 45mm !important;
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+        }
+        
+        /* Worksheet specific styles */
+        .worksheet-container {
+          height: 100% !important;
+          display: flex !important;
+          flex-direction: column !important;
+        }
+        
+        .worksheet-content {
+          height: 100% !important;
+          display: flex !important;
+          flex-direction: column !important;
+        }
+        
+        .activities-grid {
+          flex: 1 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 0.5cm !important;
+        }
+        
+        .activity-item {
+          flex: 1 !important;
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+        }
+        
+        /* Force background colors */
+        * { 
+          -webkit-print-color-adjust: exact !important; 
+          print-color-adjust: exact !important; 
+          color-adjust: exact !important;
+        }
+        
+        /* Hide scrollbars */
+        ::-webkit-scrollbar { 
+          display: none !important; 
+        }
+        
+        /* Remove any background images from parent */
+        [class*="bg-"] {
+          background-image: none !important;
+        }
+        
+        /* Ensure text is black */
+        h1, h2, h3, h4, p, span, div {
+          color: black !important;
+        }
+      }
+      /* Screen styles for A4 preview */
+      @media screen {
+        .a4-page {
+          width: 210mm;
+          min-height: 297mm;
+          margin: 0 auto;
+          box-shadow: 0 4mm 8mm rgba(0,0,0,0.1);
+        }
+      }
+      .no-print { 
+        /* Keep existing styles */
+      }
+    </style>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/planet-pal/assets/index-BysMK-Vf.js"></script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
